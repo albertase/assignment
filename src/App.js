@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Countries from './components/Countries';
+import Form from './components/Form';
+import FormList from './components/FormList';
+import Product from './components/Product';
+import { UserList } from './data';
 
 function App() {
+  const [ news, setNews] = useState(UserList)
+  const handleFormChange = (cal) => {
+    setNews((fName, lName, uName)=> {
+      return [...cal, {
+        firstName: fName,
+        lastName: lName,
+        username: uName
+
+      }]
+    })
+    
+  }
+
+  // const result = UserList.map(user => user)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Countries/>
+      <Form saveForm={handleFormChange}/>
+      <Product  names="Albert" name={news}/>
+      <FormList name={news}/>
     </div>
   );
 }
