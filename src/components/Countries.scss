@@ -1,3 +1,13 @@
+@use './sass-variables' as *;
+
+$breakpoint: (
+	small: 45em,
+	medium: 65em,
+	large: 90em
+);
+
+
+
 .phoneInput_container {
   text-align: center;
   width: 350px;
@@ -81,3 +91,23 @@
 /* .PhoneInputCountryIcon--border {
    border: 2px solid green;
 } */
+
+.sass {
+	padding: 20px;
+	background-color: red;
+
+	button {
+		color: $greenColor;
+		background-color: #fff;
+		border-radius: 30%;
+		padding: 10px;
+		font-size: $fontSize;
+
+		&:hover{
+			cursor: pointer;
+			color: #fff;
+			background-color: $greenColor;
+		}
+	}
+
+}

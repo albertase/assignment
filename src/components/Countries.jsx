@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import "./Countries.css";
+import "./Countries.scss";
 
 const Countries = () => {
   const [countries, setCountries] = useState([]);
@@ -43,6 +43,9 @@ const Countries = () => {
         />
       </div>
       {value}
+      <div className="sass">
+        <button>Sass</button>
+      </div>
     </div>
   );
 };
